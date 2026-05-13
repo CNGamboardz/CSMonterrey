@@ -90,8 +90,8 @@ class AutenticacionControlador {
 
   // Cerrar sesión
   static cerrarSesion(req, res) {
-    res.clearCookie('token_acceso');
-    res.clearCookie('info_usuario');
+    res.clearCookie('token_acceso', { path: '/' });
+    res.clearCookie('info_usuario', { path: '/' });
     return res.json({ exito: true, mensaje: 'Sesión finalizada exitosamente' });
   }
 }

@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     botonCerrarSesion.addEventListener('click', async () => {
       try {
         await fetch('/api/autenticacion/salir', { method: 'POST' });
+        document.cookie = "token_acceso=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "info_usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
         window.location.href = '/login';
       } catch (err) {
         document.cookie = "token_acceso=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

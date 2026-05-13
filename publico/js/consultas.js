@@ -69,6 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   precargarLogoBase64();
 
+  // Cerrar sesión de forma segura desde la vista de consultas
+  const botonCerrarSesion = document.getElementById('botonCerrarSesion');
+  if (botonCerrarSesion) {
+    botonCerrarSesion.addEventListener('click', async () => {
+      try {
+        await fetch('/api/autenticacion/salir', { method: 'POST' });
+        document.cookie = "token_acceso=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "info_usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        window.location.href = '/login';
+      } catch (err) {
+        document.cookie = "token_acceso=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "info_usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        window.location.href = '/login';
+      }
+    });
+  }
+
   const enlaces = document.querySelectorAll('.supervinculo');
   const tituloVistaActual = document.getElementById('tituloVistaActual');
   const subtituloVistaActual = document.getElementById('subtituloVistaActual');

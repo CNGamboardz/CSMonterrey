@@ -6,5 +6,6 @@ const enrutador = express.Router();
 enrutador.post('/login', AutenticacionControlador.iniciarSesion);
 enrutador.post('/registro', AutenticacionControlador.registrar);
 enrutador.get('/salir', AutenticacionControlador.cerrarSesion);
+enrutador.post('/salir', AutenticacionControlador.cerrarSesion);
 
 module.exports = enrutador;
