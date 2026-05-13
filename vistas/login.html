@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión | CSMonterrey</title>
+  <!-- Su propia hoja de estilos dedicada -->
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+  <header>
+    <a href="/" class="logo">
+      <img src="/LogoApp.png" alt="Logo CSMonterrey" class="img-logo-header" onerror="this.style.display='none'">
+      <span>CSMonterrey</span>
+    </a>
+    <a href="/registro" class="boton-header">Registrarse</a>
+  </header>
+
+  <main class="contenedor-auth">
+    <div class="caja-auth">
+      
+      <div class="cabecera-auth">
+        <h2>Acceso Corporativo</h2>
+        <p>Ingresa tus credenciales asignadas</p>
+      </div>
+
+      <div id="alertaLogin" class="alerta"></div>
+
+      <form id="formularioLogin">
+        <div class="grupo">
+          <label for="correo">Correo Electrónico</label>
+          <input type="email" id="correo" name="correo" class="control" placeholder="admin@csmonterrey.com" required autofocus>
+        </div>
+
+        <div class="grupo">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" class="control" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="boton-submit" id="botonLogin">
+          Iniciar Sesión
+        </button>
+      </form>
+
+      <div class="pie-auth">
+        ¿No tienes cuenta? <a href="/registro">Regístrate aquí</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/js/autenticacion.js"></script>
+</body>
+</html>

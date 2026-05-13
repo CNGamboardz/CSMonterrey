@@ -1,9 +1,9 @@
-const pool = require('../config/database');
+const pool = require('../configuracion/base_datos');
 
-class QueryModel {
-  // 1. Lista General de Empleados
-  static async getEmpleadosGenerales() {
-    const query = `
+class ConsultaModelo {
+  // 1. Plantilla General de Empleados
+  static async obtenerEmpleadosGenerales() {
+    const consulta = `
       SELECT 
         e.id_empleado AS "ID Empleado", 
         e.nombre || ' ' || e.apaterno AS "Empleado", 
@@ -17,13 +17,13 @@ class QueryModel {
       JOIN tblsucursales s ON e.id_sucursal = s.id_sucursal 
       ORDER BY e.id_empleado;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 2. Directorio de Sucursales y Ubicaciones
-  static async getSucursalesDirectorio() {
-    const query = `
+  static async obtenerSucursalesDirectorio() {
+    const consulta = `
       SELECT 
         s.id_sucursal AS "No. Sucursal", 
         s.nombre_sucursal AS "Nombre de Sucursal", 
@@ -37,13 +37,13 @@ class QueryModel {
       JOIN tbldepartamentos d ON s.id_departamento = d.id_departamento 
       ORDER BY s.id_sucursal;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 3. Catálogo de Puestos y Rangos Salariales
-  static async getPuestosCatalogo() {
-    const query = `
+  static async obtenerPuestosCatalogo() {
+    const consulta = `
       SELECT 
         id_puesto AS "Código Puesto", 
         nombre_puesto AS "Denominación del Puesto", 
@@ -52,13 +52,13 @@ class QueryModel {
       FROM tblpuestos 
       ORDER BY salario_max DESC;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 4. Estadísticas por Departamento
-  static async getEstadisticasDepartamentos() {
-    const query = `
+  static async obtenerEstadisticasDepartamentos() {
+    const consulta = `
       SELECT 
         d.nombre_departamento AS "Departamento", 
         COUNT(e.id_empleado) AS "Total Empleados", 
@@ -69,13 +69,13 @@ class QueryModel {
       GROUP BY d.nombre_departamento 
       ORDER BY "Nómina Mensual" DESC;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 5. Top Empleados Mejor Pagados
-  static async getTopMejorPagados() {
-    const query = `
+  static async obtenerTopMejorPagados() {
+    const consulta = `
       SELECT 
         e.id_empleado AS "ID", 
         e.nombre || ' ' || e.apaterno AS "Nombre del Empleado", 
@@ -88,13 +88,13 @@ class QueryModel {
       ORDER BY e.salario DESC 
       LIMIT 10;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 6. Estructura Gerencial (Cadena de mando)
-  static async getEstructuraGerencial() {
-    const query = `
+  static async obtenerEstructuraGerencial() {
+    const consulta = `
       SELECT 
         e.id_empleado AS "ID Empleado", 
         e.nombre || ' ' || e.apaterno AS "Subordinado", 
@@ -105,13 +105,13 @@ class QueryModel {
       JOIN tblpuestos p ON e.id_puesto = p.id_puesto 
       ORDER BY e.id_gerente NULLS FIRST, e.id_empleado;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 7. Distribución Geográfica de Sedes
-  static async getDistribucionGeografica() {
-    const query = `
+  static async obtenerDistribucionGeografica() {
+    const consulta = `
       SELECT 
         c.id_ciudad AS "ID Ciudad", 
         c.nombre_ciudad AS "Ciudad / Municipio", 
@@ -120,13 +120,13 @@ class QueryModel {
       JOIN tblestados e ON c.id_estado = e.id_estado 
       ORDER BY e.nombre_estado, c.nombre_ciudad;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 8. Gasto en Nómina por Sucursal
-  static async getGastoNominaSucursal() {
-    const query = `
+  static async obtenerGastoNominaSucursal() {
+    const consulta = `
       SELECT 
         s.nombre_sucursal AS "Sucursal", 
         c.nombre_ciudad AS "Ciudad Ubicación", 
@@ -138,13 +138,13 @@ class QueryModel {
       GROUP BY s.nombre_sucursal, c.nombre_ciudad 
       ORDER BY "Inversión en Nómina" DESC;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 9. Antigüedad y Fechas de Contratación
-  static async getAntiguedadEmpleados() {
-    const query = `
+  static async obtenerAntiguedadEmpleados() {
+    const consulta = `
       SELECT 
         id_empleado AS "ID", 
         nombre || ' ' || apaterno AS "Empleado", 
@@ -153,13 +153,13 @@ class QueryModel {
       FROM tblempleados 
       ORDER BY fecha_contratacion ASC;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 
   // 10. Directorio de Cuentas de Usuario del Sistema
-  static async getUsuariosSistema() {
-    const query = `
+  static async obtenerUsuariosSistema() {
+    const consulta = `
       SELECT 
         id_usuario AS "ID Usuario", 
         correo AS "Correo Electrónico", 
@@ -168,9 +168,9 @@ class QueryModel {
       FROM tblusuarios 
       ORDER BY id_usuario;
     `;
-    const { rows } = await pool.query(query);
+    const { rows } = await pool.query(consulta);
     return rows;
   }
 }
 
-module.exports = QueryModel;
+module.exports = ConsultaModelo;

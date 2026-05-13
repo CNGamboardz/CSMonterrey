@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard General | CSMonterrey</title>
+  <!-- Su propia hoja de estilos dedicada -->
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <!-- Librería Chart.js para gráficos dinámicos interactivos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <a href="/dashboard" class="logo">
+      <img src="/LogoApp.png" alt="Logo CSMonterrey" class="img-logo-header" onerror="this.style.display='none'">
+      <span>CSMonterrey <small>Resumen</small></span>
+    </a>
+    <div class="perfil-acciones">
+      <span class="etiqueta-usuario" id="etiquetaUsuario">Administrador</span>
+      <button id="botonCerrarSesion" class="boton-salir">Cerrar Sesión</button>
+    </div>
+  </header>
+
+  <main class="contenedor-dashboard">
+    <div class="bienvenida">
+      <div>
+        <h1 id="textoBienvenida">Panel de Administración</h1>
+        <p>Indicadores corporativos e inteligencia de datos en tiempo real</p>
+      </div>
+      <a href="/consultas" class="boton-consultas">
+        <span>Ir al Panel de Consultas</span>
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7m0 0l-7 7m7-7H5"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Tarjetas de métricas globales -->
+    <div class="grid-tarjetas">
+      <div class="tarjeta-metrica">
+        <div class="titulo-metrica">Personal Activo</div>
+        <div class="valor-metrica" id="metricaEmpleados">--</div>
+        <span class="detalle-metrica">Conectado a tblempleados</span>
+      </div>
+
+      <div class="tarjeta-metrica">
+        <div class="titulo-metrica">Nómina Estimada Mensual</div>
+        <div class="valor-metrica" id="metricaNomina">--</div>
+        <span class="detalle-metrica">Inversión salarial global</span>
+      </div>
+
+      <div class="tarjeta-metrica">
+        <div class="titulo-metrica">Sucursales Operativas</div>
+        <div class="valor-metrica" id="metricaSucursales">--</div>
+        <span class="detalle-metrica">Despliegue operativo nacional</span>
+      </div>
+    </div>
+
+    <!-- NUEVO: Sección de Gráficos de Inteligencia Dinámica en tarjetas blancas -->
+    <div class="grid-graficos">
+      <div class="tarjeta-grafico">
+        <div class="cabecera-grafico">
+          <h3>Nómina Anualizada por Sucursal</h3>
+          <span class="sub-grafico">Distribución presupuestaria</span>
+        </div>
+        <div class="contenedor-canvas">
+          <canvas id="graficoSucursales"></canvas>
+        </div>
+      </div>
+
+      <div class="tarjeta-grafico">
+        <div class="cabecera-grafico">
+          <h3>Empleados por Departamento</h3>
+          <span class="sub-grafico">Densidad de capital humano</span>
+        </div>
+        <div class="contenedor-canvas">
+          <canvas id="graficoDepartamentos"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="seccion-informativa">
+      <h3>Estructura Corporativa Integral</h3>
+      <p>
+        Este panel ofrece una perspectiva gerencial del estado de operaciones de <strong>CSMonterrey</strong>, complementada con visualizaciones de inteligencia de negocios. 
+        Para ejecutar y filtrar interactivamente las <strong>10 consultas relacionales avanzadas</strong> con la función nativa de exportación a documentos PDF, haz clic en el botón superior derecho <strong>"Ir al Panel de Consultas"</strong>.
+      </p>
+    </div>
+  </main>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

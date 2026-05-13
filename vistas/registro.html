@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Corporativo | CSMonterrey</title>
+  <!-- Su propia hoja de estilos dedicada -->
+  <link rel="stylesheet" href="/css/registro.css">
+</head>
+<body>
+
+  <header>
+    <a href="/" class="logo">
+      <img src="/LogoApp.png" alt="Logo CSMonterrey" class="img-logo-header" onerror="this.style.display='none'">
+      <span>CSMonterrey</span>
+    </a>
+    <a href="/login" class="boton-header">Iniciar Sesión</a>
+  </header>
+
+  <main class="contenedor-registro">
+    <div class="caja-registro">
+      
+      <div class="cabecera-registro">
+        <h2>Crear Cuenta</h2>
+        <p>Regístrate en la plataforma gerencial corporativa</p>
+      </div>
+
+      <div id="alertaRegistro" class="alerta"></div>
+
+      <form id="formularioRegistro">
+        <div class="fila-grupos">
+          <div class="grupo">
+            <label for="nombre">Nombre(s) *</label>
+            <input type="text" id="nombre" name="nombre" class="control" placeholder="Carlos" required autofocus>
+          </div>
+          <div class="grupo">
+            <label for="apaterno">Apellido Paterno *</label>
+            <input type="text" id="apaterno" name="apaterno" class="control" placeholder="Garza" required>
+          </div>
+        </div>
+
+        <div class="grupo">
+          <label for="amaterno">Apellido Materno (Opcional)</label>
+          <input type="text" id="amaterno" name="amaterno" class="control" placeholder="Sada">
+        </div>
+
+        <div class="grupo">
+          <label for="correo">Correo Electrónico *</label>
+          <input type="email" id="correo" name="correo" class="control" placeholder="correo@csmonterrey.com" required>
+        </div>
+
+        <div class="grupo">
+          <label for="password">Contraseña *</label>
+          <input type="password" id="password" name="password" class="control" placeholder="Mínimo 6 caracteres" minlength="6" required>
+        </div>
+
+        <button type="submit" class="boton-submit" id="botonRegistro">
+          Finalizar Registro
+        </button>
+      </form>
+
+      <div class="pie-registro">
+        ¿Ya tienes tu cuenta? <a href="/login">Ingresa aquí</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="/js/autenticacion.js"></script>
+</body>
+</html>

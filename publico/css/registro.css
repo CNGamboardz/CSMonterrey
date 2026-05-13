@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  /* Fondo Azul Marino Profundo Corporativo */
+  background-color: #0a192f;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2.5rem;
+  background-color: #020c1b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.img-logo-header {
+  width: 42px;
+  height: auto;
+  display: block;
+}
+
+.boton-header {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.boton-header:hover {
+  background-color: #ffffff;
+  color: #0a192f;
+}
+
+.contenedor-registro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 2rem;
+}
+
+.caja-registro {
+  /* Tarjeta de registro en color blanco puro solicitada */
+  background-color: #ffffff;
+  color: #0a192f;
+  border-radius: 20px;
+  padding: 3.5rem 3rem;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cabecera-registro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.cabecera-registro h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.5px;
+  color: #0a192f;
+}
+
+.cabecera-registro p {
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.fila-grupos {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.fila-grupos .grupo {
+  flex: 1;
+}
+
+.grupo {
+  margin-bottom: 1.6rem;
+}
+
+.grupo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #0a192f;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  color: #0a192f;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.control:focus {
+  border-color: #0a192f;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(10, 25, 47, 0.1);
+}
+
+.boton-submit {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #0a192f;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(10, 25, 47, 0.2);
+  transition: all 0.2s;
+}
+
+.boton-submit:hover {
+  background-color: #112240;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 25, 47, 0.35);
+}
+
+.pie-registro {
+  margin-top: 2.5rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.pie-registro a {
+  color: #0a192f;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.alerta {
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  display: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+.alerta-error { background-color: #fef2f2; border: 1px solid #f87171; color: #991b1b; }
+.alerta-exito { background-color: #f0fdf4; border: 1px solid #4ade80; color: #166534; }

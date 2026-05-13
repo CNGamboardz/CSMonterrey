@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  /* Fondo Azul Marino Profundo Corporativo */
+  background-color: #0a192f;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.portal-contenedor {
+  width: 100%;
+  max-width: 480px;
+  /* Tarjeta en color blanco puro solicitada */
+  background-color: #ffffff;
+  color: #0a192f;
+  border-radius: 20px;
+  padding: 3.5rem 3rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.portal-cabecera {
+  margin-bottom: 2.5rem;
+}
+
+.img-logo-central {
+  width: 110px;
+  height: auto;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+}
+
+.portal-cabecera h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  color: #0a192f;
+}
+
+.portal-cabecera p {
+  color: #475569;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.portal-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.boton {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.boton-primario {
+  background-color: #0a192f;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(10, 25, 47, 0.2);
+}
+
+.boton-primario:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(10, 25, 47, 0.35);
+  background-color: #112240;
+}
+
+.boton-secundario {
+  background-color: transparent;
+  color: #0a192f;
+  border: 2px solid #0a192f;
+}
+
+.boton-secundario:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+.portal-pie {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
