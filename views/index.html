@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSMonterrey Corporativo | Sistema de Control MVC</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Cabecera / Navbar -->
+  <header>
+    <a href="/" class="logo">
+      <div class="logo-icon">CS</div>
+      <span>CSMonterrey</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/login" class="btn btn-secondary">Iniciar Sesión</a>
+      <a href="/register" class="btn btn-primary">Registrarse</a>
+    </nav>
+  </header>
+
+  <!-- Sección Principal / Hero -->
+  <main class="container">
+    <section class="hero">
+      
+      <div class="hero-content">
+        <div class="badge">Arquitectura MVC & PostgreSQL</div>
+        <h1>Gestión Corporativa <br><span class="gradient-text">Inteligente</span></h1>
+        <p>
+          Bienvenido al núcleo de administración de bases de datos de <strong>CSMonterrey</strong>. 
+          Explora de forma visual e instantánea la nómina, estructura gerencial, distribución geográfica 
+          y catálogos con nuestro panel interactivo de 10 consultas corporativas de alto desempeño.
+        </p>
+        <div class="hero-actions">
+          <a href="/dashboard" class="btn btn-primary">
+            <span>Acceder al Dashboard</span>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+          <a href="/register" class="btn btn-secondary">Crear Cuenta</a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <div class="glass-panel hero-card">
+          <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--accent);">
+            Módulos Estratégicos
+          </h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; color: var(--text-muted);">
+            <li style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--success);">✔</span> Plantilla General de Empleados
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--success);">✔</span> Directorio de Sucursales y Sedes
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--success);">✔</span> Inversión Salarial por Departamento
+            </li>
+            <li style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="color: var(--success);">✔</span> Reportes con Exportación Nativa a PDF
+            </li>
+          </ul>
+          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--glass-border); display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Base de Datos</span>
+              <strong style="color: white;">bdmonterrey (Postgres)</strong>
+            </div>
+            <span class="status-badge status-active">Online</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+</body>
+</html>
